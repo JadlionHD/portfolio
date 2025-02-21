@@ -36,7 +36,10 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<ClientRouter />
+
+<!-- TODO: Firefox doesnt implemented View_Transition_API yet. It'll fallback into swap instead -->
+<!-- Ref: https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API -->
+<ClientRouter fallback="swap" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
