@@ -1,7 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
-const routeName = Astro.url.pathname;
+const routeName = Astro.url.pathname.replace(/\/$/, "");
 ---
 
 <header>
