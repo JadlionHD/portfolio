@@ -20,6 +20,9 @@ importers:
       '@astrojs/vue':
         specifier: ^5.0.6
         version: 5.0.6(astro@5.3.0(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.8)(typescript@5.7.3))(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.8)(vue@3.5.13(typescript@5.7.3))
+      '@fontsource-variable/rubik':
+        specifier: ^5.1.1
+        version: 5.1.1
       '@tailwindcss/vite':
         specifier: ^4.0.7
         version: 4.0.7(vite@6.1.1(jiti@2.4.2)(lightningcss@1.29.1))
@@ -376,6 +379,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/rubik@5.1.1':
+    resolution: {integrity: sha512-Xh6Y39Xx1v0AIERdU+JsHiGx7I7WhN349jA/dFln8Ufud3c56yA0QS/aPdGMvyH/l+bXVmNV12cWF0hQm5ZPRw==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2749,6 +2755,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.24.2':
     optional: true
+
+  '@fontsource-variable/rubik@5.1.1': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
