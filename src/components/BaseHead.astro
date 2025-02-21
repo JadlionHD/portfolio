@@ -3,6 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import "../styles/globals.css";
 import { SITE_TITLE } from "../consts";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -34,6 +35,7 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<ClientRouter />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
