@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Card from "@/components/Card.astro";
+import { fade } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -14,14 +15,22 @@ import Card from "@/components/Card.astro";
   <body>
     <Header />
     <main>
-      <h1 transition:name="profile-name">Stuff that I made</h1>
+      <div transition:name="profile-name" transition:animate={fade({ duration: "0.25s" })} class="md:text-6xl text-4xl text-center mb-4">
+        Stuff that I made
+      </div>
 
-      <div class="flex flex-wrap gap-10 items-center justify-center">
+      <div class="flex flex-wrap gap-6 items-center justify-center">
         <Card title="GrowServer" href="https://github.com/StileDevs/GrowServer" description="A Growtopia private server using Node.js & Bun.js" />
         <Card
           title="growtopia.js"
-          href="https://github.com/StileDevs/GrowServer"
+          href="https://github.com/StileDevs/growtopia.js"
           description="A Rust based, cross-platform, high-performance Growtopia private server framework utilizing Node.js, Bun.js."
+        />
+        <Card title="n-enet" href="https://github.com/JadlionHD/n-enet" description="Transpiled ENet library to Javascript" />
+        <Card
+          title="Yukio Lumina"
+          href="https://discord.com/oauth2/authorize?client_id=510749305208963092&permissions=1644971949567&scope=applications.commands+bot"
+          description="A Golang based, Discord bot that can play music."
         />
       </div>
     </main>

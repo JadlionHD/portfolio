@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import dayjs from "dayjs";
+import { fade } from "astro:transitions";
 
 const birthday = dayjs("2005-02-13");
 const now = dayjs();
@@ -18,10 +19,24 @@ const age = now.diff(birthday, "year");
   <body>
     <Header />
     <main>
-      <h1 transition:name="profile-name">Hendra Gunawan 🔭</h1>
+      <div
+        transition:name="profile-name"
+        transition:animate={fade({ duration: "0.25s" })}
+        class="md:text-6xl text-4xl"
+        transition:animate={fade({ duration: "0.25s" })}
+      >
+        Hendra Gunawan 🔭
+      </div>
 
       <div class="my-4 flex justify-center aspect-auto">
-        <img src="/sigma.jpg" alt="Profile" loading="lazy" class="aspect-10/2 object-cover object-center" transition:name="profile-sigma" />
+        <img
+          src="/sigma.jpg"
+          alt="Profile"
+          loading="lazy"
+          class="aspect-10/2 object-cover object-center"
+          transition:name="profile-sigma"
+          transition:animate={fade({ duration: "0.25s" })}
+        />
       </div>
       <p>
         Hello! I'm Hendra Gunawan, <span class="bg-blue-200 p-1 rounded-lg hover:bg-blue-300 transition ease-in-out cursor-pointer"

@@ -3,11 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import dayjs from "dayjs";
-
-const birthday = dayjs("2005-02-13");
-const now = dayjs();
-const age = now.diff(birthday, "year");
+import { fade } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -19,20 +15,30 @@ const age = now.diff(birthday, "year");
     <Header />
     <main>
       <div class="flex justify-center items-center my-4 gap-x-10">
-        <div class="flex flex-col items-center gap-y-4">
-          <img src="/sigma.jpg" alt="Profile" class="md:w-[300px] w-40" loading="lazy" transition:name="profile-sigma" />
-          <h5 transition:name="profile-name" class="text-center transition-all">Hendra Gunawan</h5>
+        <div>
+          <img
+            src="/sigma.jpg"
+            width="200"
+            alt="Profile"
+            class="aspect-square mb-2"
+            loading="lazy"
+            transition:name="profile-sigma"
+            transition:animate={fade({ duration: "0.25s" })}
+          />
+          <h5 transition:name="profile-name" transition:animate={fade({ duration: "0.25s" })} class="text-center transition-all">Hendra</h5>
         </div>
         <div class="border-l border-gray-300 h-32"></div>
-        <div class="flex flex-col items-center gap-y-4">
+        <div>
           <img
             src="https://avatars.githubusercontent.com/u/48410066?v=4"
             alt="Profile Github"
-            class="md:w-[300px] w-40"
+            width="200"
+            class="aspect-square mb-2"
             loading="lazy"
             transition:name="profile-github"
+            transition:animate={fade({ duration: "0.25s" })}
           />
-          <h5 transition:name="nav-name" class="text-center transition-all">JadlionHD</h5>
+          <h5 transition:name="nav-name" transition:animate={fade({ duration: "0.25s" })} class="text-center transition-all">JadlionHD</h5>
         </div>
       </div>
 
