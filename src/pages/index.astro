@@ -20,14 +20,14 @@ const age = now.diff(birthday, "year");
     <main>
       <h1 transition:name="profile-name">Hendra Gunawan 🔭</h1>
 
+      <div class="my-4 flex justify-center aspect-auto">
+        <img src="/sigma.jpg" alt="Profile" loading="lazy" class="aspect-10/2 object-cover object-center" transition:name="profile-sigma" />
+      </div>
       <p>
         Hello! I'm Hendra Gunawan, <span class="bg-blue-200 p-1 rounded-lg hover:bg-blue-300 transition ease-in-out cursor-pointer"
           >{age} years old</span
         > and I am a Fullstacks Developer Software Engineering Vocational School graduate with a passion for technology, especially fullstack development
       </p>
-      <div class="my-4">
-        <img width={480} height={280} src="/sigma.jpg" alt="Pemagangan" transition:name="profile-sigma" />
-      </div>
       <p>I like making Website & Desktop apps, especially apps related to networking such as multiplayer games</p>
     </main>
     <Footer />

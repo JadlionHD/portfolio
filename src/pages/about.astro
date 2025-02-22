@@ -20,17 +20,16 @@ const age = now.diff(birthday, "year");
     <main>
       <div class="flex justify-center items-center my-4 gap-x-10">
         <div class="flex flex-col items-center gap-y-4">
-          <img width={300} height={100} src="/sigma.jpg" alt="Profile" class="md:w-[300px] w-40" transition:name="profile-sigma" />
+          <img src="/sigma.jpg" alt="Profile" class="md:w-[300px] w-40" loading="lazy" transition:name="profile-sigma" />
           <h5 transition:name="profile-name" class="text-center transition-all">Hendra Gunawan</h5>
         </div>
         <div class="border-l border-gray-300 h-32"></div>
         <div class="flex flex-col items-center gap-y-4">
           <img
-            width={300}
-            height={100}
             src="https://avatars.githubusercontent.com/u/48410066?v=4"
             alt="Profile Github"
             class="md:w-[300px] w-40"
+            loading="lazy"
             transition:name="profile-github"
           />
           <h5 transition:name="nav-name" class="text-center transition-all">JadlionHD</h5>

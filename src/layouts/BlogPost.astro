@@ -60,7 +60,8 @@ const { slug } = Astro.params;
     <main>
       <article>
         <div class="prose">
-          <div class="title">
+          <div class="title" transition:name="profile-name">
+            <h1>{title}</h1>
             <div class="date">
               <FormattedDate date={pubDate} />
               {
@@ -71,10 +72,9 @@ const { slug } = Astro.params;
                 )
               }
             </div>
-            <h1 transition:name="profile-name">{title}</h1>
           </div>
           <div class="hero-image">
-            {heroImage && <img width={1020} height={510} src={heroImage} alt="" transition:name={`blog-cover-${slug}`} />}
+            {heroImage && <img width={1020} height={510} src={heroImage} alt={slug} loading="lazy" transition:name={`blog-cover-${slug}`} />}
           </div>
           <hr class="my-10" />
           <slot />

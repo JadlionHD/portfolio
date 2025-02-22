@@ -4,28 +4,33 @@ import { SITE_TITLE } from "../consts";
 const routeName = Astro.url.pathname.replace(/\/$/, "");
 ---
 
-<header>
-  <nav>
-    <a href="/" class="flex items-center gap-x-4">
-      <img
-        width={32}
-        height={32}
-        src="https://avatars.githubusercontent.com/u/48410066?v=4"
-        alt="Profile Github"
-        class={`rounded-full ${routeName === "/about" ? "hidden" : ""}`}
-        transition:name="profile-github"
-      />
-      <h2 transition:name="nav-name" class={`${routeName === "/about" ? "hidden" : ""}`}>
-        {SITE_TITLE}
-      </h2>
-    </a>
-    <div class="internal-links">
+<header class="sticky top-0 z-10">
+  <nav class="flex items-center justify-between">
+    {
+      routeName !== "/about" && (
+        <a href="/" class="flex items-center gap-x-4">
+          <img
+            width={32}
+            height={32}
+            src="https://avatars.githubusercontent.com/u/48410066?v=4"
+            alt="Profile Github"
+            class={`rounded-full ${routeName === "/about" ? "hidden" : ""}`}
+            transition:name="profile-github"
+          />
+
+          <h2 transition:name="nav-name" class={`${routeName === "/about" ? "hidden" : ""}`}>
+            {SITE_TITLE}
+          </h2>
+        </a>
+      )
+    }
+    <div class="internal-links" transition:name="nav-menu">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
     </div>
-    <div class="social-links">
+    <div class="social-links" transition:name="nav-socials-link">
       <a href="https://x.com/jadlionhd" target="_blank">
         <span class="sr-only">Follow JadlionHD on X</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
@@ -69,11 +74,6 @@ const routeName = Astro.url.pathname.replace(/\/$/, "");
   h2 a,
   h2 a.active {
     text-decoration: none;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
   nav a {
     padding: 1em 0.5em;
