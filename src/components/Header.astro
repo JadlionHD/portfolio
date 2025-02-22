@@ -1,7 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
-import { fade } from "astro:transitions";
+
 const routeName = Astro.url.pathname.replace(/\/$/, "");
 ---
 
@@ -17,21 +17,16 @@ const routeName = Astro.url.pathname.replace(/\/$/, "");
             alt="Profile Github"
             class={`rounded-full ${routeName === "/about" ? "hidden" : ""}`}
             transition:name="profile-github"
-            transition:animate={fade({ duration: "0.25s" })}
           />
 
-          <div
-            transition:name="nav-name"
-            transition:animate={fade({ duration: "0.25s" })}
-            class={`text-base font-bold ${routeName === "/about" ? "hidden" : ""}`}
-          >
+          <div transition:name="nav-name" class={`text-base font-bold ${routeName === "/about" ? "hidden" : ""}`}>
             {SITE_TITLE}
           </div>
         </a>
       )
     }
 
-    <div class="internal-links" transition:name="nav-menu" transition:animate={fade({ duration: "0.25s" })}>
+    <div class="internal-links" transition:name="nav-menu">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>

@@ -1,13 +1,11 @@
 ---
-import { fade } from "astro:transitions";
-
 const today = new Date();
 ---
 
-<footer transition:name="footer-menu" transition:animate={fade({ duration: "0.25s" })}>
+<footer transition:name="footer-menu">
   &copy; {today.getFullYear()}
   <span class="text-zinc-500">JadlionHD</span>
-  <div class="social-links flex flex-wrap gap-2 justify-center" transition:name="nav-socials-link" transition:animate={fade({ duration: "0.25s" })}>
+  <div class="social-links flex flex-wrap gap-2 justify-center" transition:name="nav-socials-link">
     <a href="https://github.com/JadlionHD" target="_blank">
       <span class="sr-only">Go to JadlionHD's GitHub repo</span>
       <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"

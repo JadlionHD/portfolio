@@ -4,7 +4,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Card from "@/components/Card.astro";
-import { fade } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -15,9 +14,7 @@ import { fade } from "astro:transitions";
   <body>
     <Header />
     <main>
-      <div transition:name="profile-name" transition:animate={fade({ duration: "0.25s" })} class="md:text-6xl text-4xl text-center mb-4">
-        Stuff that I made
-      </div>
+      <div transition:name="profile-name" class="md:text-6xl text-4xl text-center mb-4">Stuff that I made</div>
 
       <div class="flex flex-wrap gap-6 items-center justify-center">
         <Card title="GrowServer" href="https://github.com/StileDevs/GrowServer" description="A Growtopia private server using Node.js & Bun.js" />
