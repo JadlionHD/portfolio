@@ -3,18 +3,21 @@
 // all pages through the use of the <BaseHead /> component.
 import "@fontsource-variable/rubik";
 import "../styles/globals.css";
-import { SITE_TITLE } from "../consts";
+import { SITE_AUTHOR, SITE_AUTHOR_NICKNAME, SITE_AUTHOR_PROFILE_PICTURE, SITE_TITLE } from "../consts";
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
   description: string;
+  author?: string;
+  authorNickname?: string;
+  authorImg?: string;
   image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/reimu-tired.png" } = Astro.props;
+const { title, description, image = "/reimu-tired.png", author = SITE_AUTHOR } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -36,6 +39,8 @@ const { title, description, image = "/reimu-tired.png" } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="url" content={Astro.url} />
+<meta name="author" content={author} />
 
 <!-- TODO: Firefox doesnt implemented View_Transition_API yet. It'll fallback into swap instead -->
 <!-- Ref: https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API -->

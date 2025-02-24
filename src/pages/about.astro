@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { Image } from "astro:assets";
 ---
 
 <!doctype html>
@@ -15,15 +16,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <main>
       <div class="flex justify-center items-center my-4 gap-x-10">
         <div>
-          <img src="/sigma.jpg" width="200" alt="Profile" class="aspect-square mb-2" loading="lazy" transition:name="profile-sigma" />
+          <Image src="/sigma.jpg" width={200} height={200} alt="Profile" class="aspect-square mb-2" loading="lazy" transition:name="profile-sigma" />
           <h5 transition:name="profile-name" class="text-center transition-all">Hendra</h5>
         </div>
         <div class="border-l border-gray-300 h-32"></div>
         <div>
-          <img
+          <Image
             src="https://avatars.githubusercontent.com/u/48410066?v=4"
             alt="Profile Github"
-            width="200"
+            width={200}
+            height={200}
             class="aspect-square mb-2"
             loading="lazy"
             transition:name="profile-github"

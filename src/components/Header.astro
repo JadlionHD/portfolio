@@ -1,6 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import { Image } from "astro:assets";
 
 const routeName = Astro.url.pathname.replace(/\/$/, "");
 ---
@@ -10,7 +11,7 @@ const routeName = Astro.url.pathname.replace(/\/$/, "");
     {
       routeName !== "/about" && (
         <a href="/" class="flex md:flex-row flex-col items-center gap-2">
-          <img
+          <Image
             width={32}
             height={32}
             src="https://avatars.githubusercontent.com/u/48410066?v=4"

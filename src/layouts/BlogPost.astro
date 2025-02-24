@@ -4,16 +4,28 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import { SITE_AUTHOR, SITE_AUTHOR_NICKNAME, SITE_AUTHOR_PROFILE_PICTURE, SITE_AUTHOR_ROLE } from "../consts";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  author = SITE_AUTHOR,
+  authorNickname = SITE_AUTHOR_NICKNAME,
+  authorImg = SITE_AUTHOR_PROFILE_PICTURE,
+  readingTime
+} = Astro.props;
+
 const { slug } = Astro.params;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} image={heroImage} author={author} authorImg={authorImg} authorNickname={authorNickname} />
     <style>
       main {
         width: 100%;
@@ -62,19 +74,41 @@ const { slug } = Astro.params;
         <div class="prose">
           <div class="title" transition:name="profile-name">
             <div class="md:text-6xl text-4xl text-center mb-4">{title}</div>
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
+            <div class="author mt-6 flex items-center gap-3 justify-center">
+              <img width={32} height={32} src={authorImg} alt={author} loading="lazy" decoding="async" class="!rounded-full" />
+              <div>{author} <span class="text-sm">{author === "Hendra Gunawan" && ` - ${SITE_AUTHOR_ROLE[0]}`}</span></div>
+            </div>
+            <div class="misc flex justify-between my-10">
+              <div class="reading-time flex items-center gap-x-3">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                      d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z"
+                    ></path>
+                    <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"></path>
+                    <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"></path>
+                  </svg>
+                </div>
+                {readingTime}
+              </div>
+              <div class="date">
+                <FormattedDate date={pubDate} />
+                {
+                  updatedDate && (
+                    <div class="last-updated-on">
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </div>
+                  )
+                }
+              </div>
             </div>
           </div>
           <div class="hero-image">
-            {heroImage && <img width={1020} height={510} src={heroImage} alt={slug} loading="lazy" transition:name={`blog-cover-${slug}`} />}
+            {
+              heroImage && (
+                <img width={1020} height={510} src={heroImage} alt={slug} loading="lazy" decoding="async" transition:name={`blog-cover-${slug}`} />
+              )
+            }
           </div>
           <hr class="my-10" />
           <slot />

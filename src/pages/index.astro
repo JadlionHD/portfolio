@@ -21,7 +21,15 @@ const age = now.diff(birthday, "year");
       <div transition:name="profile-name" class="md:text-6xl text-4xl">Hendra Gunawan 🔭</div>
 
       <div class="my-4 flex justify-center aspect-auto">
-        <img src="/sigma.jpg" alt="Profile" loading="lazy" class="aspect-10/2 object-cover object-center" transition:name="profile-sigma" />
+        <img
+          height={200}
+          src="/sigma.jpg"
+          alt="Profile"
+          loading="lazy"
+          decoding="async"
+          class="aspect-10/2 object-cover object-center"
+          transition:name="profile-sigma"
+        />
       </div>
       <p>
         Hello! I'm Hendra Gunawan, <span class="bg-blue-200 p-1 rounded-lg hover:bg-blue-300 transition ease-in-out cursor-pointer"
