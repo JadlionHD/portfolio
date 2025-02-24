@@ -57,10 +57,6 @@ const { slug } = Astro.params;
       .title h1 {
         margin: 0 0 0.5em 0;
       }
-      .date {
-        margin-bottom: 0.5em;
-        color: rgb(var(--gray));
-      }
       .last-updated-on {
         font-style: italic;
       }
@@ -78,7 +74,7 @@ const { slug } = Astro.params;
               <img width={32} height={32} src={authorImg} alt={author} loading="lazy" decoding="async" class="!rounded-full" />
               <div>{author} <span class="text-sm">{author === "Hendra Gunawan" && ` - ${SITE_AUTHOR_ROLE[0]}`}</span></div>
             </div>
-            <div class="misc flex justify-between my-10">
+            <div class="misc flex flex-wrap items-center sm:justify-between justify-center gap-2 my-6">
               <div class="reading-time flex items-center gap-x-3">
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
