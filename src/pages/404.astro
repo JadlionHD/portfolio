@@ -2,23 +2,23 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { Image } from "astro:assets";
 const aya = ["100228024_p0.jpg", "108322114_p0.jpg", "110921385_p0.jpg", "117621709_p0.jpg", "120059766_p0.jpg", "124388028_p0.jpg"];
 const randomAya = aya[Math.floor(Math.random() * aya.length)];
+const ayaUrl = `/aya/${randomAya}`;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="Aya 💖" description={SITE_DESCRIPTION} />
+    <BaseHead title="Aya 💖" description={`404 Not found\nArtwork by https://www.pixiv.net/en/users/3154218`} image={ayaUrl} />
   </head>
   <body>
     <Header />
     <main>
       <div class="flex flex-col items-center justify-center gap-4" transition:name="profile-name">
         <h1 class="sm:!text-4xl !text-3xl">404 Not found</h1>
-        <Image src={`/aya/${randomAya}`} width={400} height={200} alt="Not found" class="aspect-1-1 object-cover" />
+        <Image src={ayaUrl} width={400} height={200} alt="Not found" class="aspect-1-1 object-cover" />
         <p class="text-sm text-zinc-600">
           Artwork by <a href="https://www.pixiv.net/en/users/3154218" target="_blank">Pixiv ととはる（鯨井みなと）</a>
         </p>
