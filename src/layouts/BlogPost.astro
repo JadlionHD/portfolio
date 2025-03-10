@@ -46,7 +46,6 @@ const { slug } = Astro.params;
         max-width: calc(100% - 2em);
         margin: auto;
         padding: 1em;
-        color: rgb(var(--gray-dark));
       }
       .title {
         margin-bottom: 1em;
@@ -69,7 +68,7 @@ const { slug } = Astro.params;
       <article>
         <div class="prose">
           <div class="title" transition:name="profile-name">
-            <div class="md:text-6xl text-4xl text-center mb-4">{title}</div>
+            <h1>{title}</h1>
             <div class="author mt-6 flex items-center gap-3 justify-center">
               <img width={32} height={32} src={authorImg} alt={author} loading="lazy" decoding="async" class="!rounded-full" />
               <div>{author} <span class="text-sm">{author === "Hendra Gunawan" && ` - ${SITE_AUTHOR_ROLE[0]}`}</span></div>

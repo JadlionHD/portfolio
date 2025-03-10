@@ -1,10 +1,11 @@
 ---
+import { ModeToggle } from "../components/ToggleMode";
 const today = new Date();
 ---
 
 <footer transition:name="footer-menu">
   &copy; {today.getFullYear()}
-  <span class="text-zinc-500">JadlionHD</span>
+  <span>JadlionHD</span>
   <div class="social-links flex flex-wrap gap-2 justify-center" transition:name="nav-socials-link">
     <a href="https://github.com/JadlionHD" target="_blank">
       <span class="sr-only">Go to JadlionHD's GitHub repo</span>
@@ -76,20 +77,19 @@ const today = new Date();
       </svg>
     </a>
   </div>
+  <ModeToggle client:load />
 </footer>
 <style>
   footer {
     padding: 2em 1em 3em 1em;
-    background: linear-gradient(var(--gray-gradient)) no-repeat;
-    color: rgb(var(--color-zinc-400));
     text-align: center;
+    background-color: var(--primary-foreground);
   }
   a {
     padding: 1em 0.5em;
     color: var(--color-zinc-500);
     border-bottom: 4px solid transparent;
     text-decoration: none;
-    transition: 200ms ease-in-out;
   }
 
   a:hover {

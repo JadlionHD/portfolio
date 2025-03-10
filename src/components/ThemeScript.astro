@@ -1,0 +1,26 @@
+---
+
+---
+
+<script is:inline>
+  const setTheme = () => {
+    const theme = (() => {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme === "light" || storedTheme === "dark" || storedTheme === "system") {
+        return storedTheme;
+      }
+      return "light";
+    })();
+
+    const isDark = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    document.documentElement.classList.toggle("dark", isDark);
+  };
+
+  setTheme();
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (localStorage.getItem("theme") === "system") {
+      setTheme();
+    }
+  });
+</script>

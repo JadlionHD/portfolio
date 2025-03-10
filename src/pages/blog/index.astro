@@ -30,7 +30,6 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
       }
       ul li * {
         text-decoration: none;
-        transition: 0.8s ease;
       }
       ul li:first-child {
         width: 100%;
@@ -54,17 +53,12 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
       }
       .title {
         margin: 0;
-        color: rgb(var(--black));
         line-height: 1;
       }
       .date {
         margin: 0;
-        color: rgb(var(--gray));
       }
-      ul li a:hover h4,
-      ul li a:hover .date {
-        color: rgb(var(--accent));
-      }
+
       ul a:hover img {
         box-shadow: var(--box-shadow);
       }
@@ -88,7 +82,7 @@ const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueO
   <body>
     <Header />
     <main>
-      <div transition:name="profile-name" class="md:text-6xl text-4xl text-center mb-4">My Blogs</div>
+      <h1 transition:name="profile-name" class="text-center">My Blogs</h1>
       <section>
         <ul>
           {

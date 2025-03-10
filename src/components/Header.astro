@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 const routeName = Astro.url.pathname.replace(/\/$/, "");
 ---
 
-<header class="sticky top-0 z-10">
+<header class="sticky top-0 z-50">
   <nav class="flex items-center justify-between">
     {
       routeName !== "/about" && (
@@ -39,8 +39,8 @@ const routeName = Astro.url.pathname.replace(/\/$/, "");
   header {
     margin: 0;
     padding: 0 1em;
-    background: white;
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    background-color: var(--primary-foreground);
   }
 
   nav a {
@@ -51,7 +51,7 @@ const routeName = Astro.url.pathname.replace(/\/$/, "");
   }
   nav a.active {
     text-decoration: none;
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--primary);
   }
 </style>
 

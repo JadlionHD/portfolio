@@ -10,7 +10,6 @@ const now = dayjs();
 const age = now.diff(birthday, "year");
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -18,7 +17,7 @@ const age = now.diff(birthday, "year");
   <body>
     <Header />
     <main>
-      <div transition:name="profile-name" class="md:text-6xl text-4xl">Hendra Gunawan 🔭</div>
+      <h1 transition:name="profile-name">Hendra Gunawan 🔭</h1>
 
       <div class="my-4 flex justify-center aspect-auto">
         <img

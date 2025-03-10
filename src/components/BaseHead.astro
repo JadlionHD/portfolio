@@ -5,6 +5,7 @@ import "@fontsource-variable/rubik";
 import "../styles/globals.css";
 import { SITE_AUTHOR, SITE_AUTHOR_NICKNAME, SITE_AUTHOR_PROFILE_PICTURE, SITE_TITLE } from "../consts";
 import { ClientRouter } from "astro:transitions";
+import ThemeScript from "../components/ThemeScript.astro";
 
 interface Props {
   title: string;
@@ -60,3 +61,4 @@ const { title, description, image = "/reimu-tired.png", author = SITE_AUTHOR } =
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<ThemeScript />
