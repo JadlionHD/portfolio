@@ -47,16 +47,6 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-html {
-  transition: var(--theme-transition);
-}
-
-*,
-*::before,
-*::after {
-  transition: var(--theme-transition);
-}
-
 body {
   font-family: "Fira Code Variable", monospace;
   margin: 0;
