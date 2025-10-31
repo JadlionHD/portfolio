@@ -4,39 +4,32 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import dayjs from "dayjs";
+import MainPage from "@/layouts/MainPage.astro";
 
 const birthday = dayjs("2005-02-13");
 const now = dayjs();
 const age = now.diff(birthday, "year");
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1 transition:name="profile-name">Hendra Gunawan 🔭</h1>
+<MainPage title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <h1 transition:name="profile-name">Hendra Gunawan 🔭</h1>
 
-      <div class="my-4 flex justify-center aspect-auto">
-        <img
-          height={200}
-          src="/sigma.jpg"
-          alt="Profile"
-          loading="lazy"
-          decoding="async"
-          class="aspect-10/2 object-cover object-center"
-          transition:name="profile-sigma"
-        />
-      </div>
-      <p>
-        Hello! I'm Hendra Gunawan, <span class="bg-blue-200 p-1 rounded-lg hover:bg-blue-300 transition ease-in-out cursor-pointer"
-          >{age} years old</span
-        > and I am a Fullstacks Developer Software Engineering Vocational School graduate with a passion for technology, especially fullstack development
-      </p>
-      <p>I like making Website & Desktop apps, especially apps related to networking such as multiplayer games</p>
-    </main>
-    <Footer />
-  </body>
-</html>
+  <div class="my-4 flex justify-center aspect-auto">
+    <img
+      height={200}
+      src="/sigma.jpg"
+      alt="Profile"
+      loading="lazy"
+      decoding="async"
+      class="aspect-10/2 object-cover object-center"
+      transition:name="profile-sigma"
+    />
+  </div>
+  <p>
+    Hello! I'm Hendra Gunawan, <span
+      class="bg-blue-200 dark:bg-blue-600 hover:dark:bg-blue-700 p-1 rounded-lg hover:bg-blue-300 transition ease-in-out cursor-pointer"
+      >{age} years old</span
+    > and I am a Fullstacks Developer Software Engineering Vocational School graduate with a passion for technology, especially fullstack development
+  </p>
+  <p>I like making Website & Desktop apps, especially apps related to networking such as multiplayer games</p>
+</MainPage>

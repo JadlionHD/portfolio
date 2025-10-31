@@ -1,0 +1,34 @@
+---
+const education = [
+  {
+    school: "SMKN 1 SAMPIT",
+    major: "REKAYASA PERANGKAT LUNAK",
+    graduate: {
+      start: "JULY 2020",
+      end: "MAY 2023"
+    }
+  },
+  {
+    school: "POLITEKNIK SAMPIT",
+    major: "Teknologi Informasi",
+    graduate: {
+      start: "SEP 2024",
+      end: "NOW"
+    }
+  }
+];
+---
+
+{
+  education.map((data) => (
+    <div class="my-2">
+      <div class="flex items-center justify-between text-center">
+        <span>{data.major}</span>
+        <span>
+          {data.graduate.start} - {data.graduate.end}
+        </span>
+      </div>
+      <div>{data.school}</div>
+    </div>
+  ))
+}

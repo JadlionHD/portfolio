@@ -16,6 +16,11 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en"
+  },
+
   markdown: {
     remarkPlugins: [remarkReadingTime]
   }

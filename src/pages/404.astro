@@ -3,8 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { Image } from "astro:assets";
-
-const ayaUrl = `/aya/117621709_p0.png`;
+import { AYA_URL } from "@/consts";
 ---
 
 <!doctype html>
@@ -17,7 +16,7 @@ const ayaUrl = `/aya/117621709_p0.png`;
     <main>
       <div class="flex flex-col items-center justify-center" transition:name="profile-name">
         <h1 class="sm:!text-4xl !text-3xl">404 Not found</h1>
-        <Image src={ayaUrl} width={400} height={200} alt="Not found" class="aspect-1-1 object-cover" />
+        <Image src={AYA_URL} width={400} height={200} alt="Not found" class="aspect-1-1 object-cover" />
         <p class="text-sm text-zinc-600">
           Artwork by <a href="https://www.pixiv.net/en/users/3154218" target="_blank">Pixiv ととはる（鯨井みなと）</a>
         </p>

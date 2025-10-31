@@ -60,10 +60,10 @@ body {
 }
 
 main {
-  width: 760px;
+  width: 58rem;
   max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 3em 1em;
+  margin: 0 auto;
+  padding: 6em 1em 20em 1em;
 }
 
 h1 {

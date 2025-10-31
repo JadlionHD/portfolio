@@ -3,7 +3,9 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Card from "@/components/Card.astro";
+import ProjectsList from "@/components/ProjectsList";
+
+const repos = ["StileDevs/GrowServer", "StileDevs/growtopia.js", "JadlionHD/Enty"];
 ---
 
 <!doctype html>
@@ -16,18 +18,7 @@ import Card from "@/components/Card.astro";
     <main>
       <h1 transition:name="profile-name" class="text-center">Stuff that I made</h1>
       <div class="flex flex-wrap gap-6 items-center justify-center">
-        <Card title="GrowServer" href="https://github.com/StileDevs/GrowServer" description="A Growtopia private server using Node.js & Bun.js" />
-        <Card
-          title="growtopia.js"
-          href="https://github.com/StileDevs/growtopia.js"
-          description="A Rust based, cross-platform, high-performance Growtopia private server framework utilizing Node.js, Bun.js."
-        />
-        <Card title="n-enet" href="https://github.com/JadlionHD/n-enet" description="Transpiled ENet library to Javascript" />
-        <Card
-          title="Yukio Lumina"
-          href="https://discord.com/oauth2/authorize?client_id=510749305208963092&permissions=1644971949567&scope=applications.commands+bot"
-          description="A Golang based, Discord bot that can play music."
-        />
+        <ProjectsList repos={repos} client:load />
       </div>
     </main>
     <Footer />
