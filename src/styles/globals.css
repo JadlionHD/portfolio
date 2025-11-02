@@ -2,6 +2,16 @@
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-Regular.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/maple/MapleMono-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/maple/MapleMono-Regular.ttf.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/maple/MapleMono-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/maple/MapleMono-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/maple/MapleMono-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 
 :root {
   --theme-transition: all 0.15s ease-in-out;
@@ -48,7 +58,7 @@
 }
 
 body {
-  font-family: "Fira Code Variable", monospace;
+  font-family: "MapleMono", monospace;
   margin: 0;
   padding: 0;
   text-align: left;
