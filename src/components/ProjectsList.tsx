@@ -65,7 +65,7 @@ export default function ProjectsList({ repos }: Props) {
     return (
       <>
         {Array.from({ length: 4 }).map((_, i) => (
-          <div key={i} className="w-[350px] h-[200px]">
+          <div key={i} className="w-96 h-64">
             <Skeleton className="h-full w-full rounded-xl" />
           </div>
         ))}
@@ -131,9 +131,9 @@ function GithubCardClient({ title, href, description, language, license, star, f
     <a
       href={href}
       target="_blank"
-      className="border-2 p-6 rounded-lg border-zinc-500 h-[16rem] w-[24rem] ease-in-out transition hover:-translate-y-2 hover:scale-[1.02] hover:shadow-lg flex flex-col"
+      className="border-2 p-6 rounded-lg border-zinc-500 h-64 w-96 ease-in-out transition hover:-translate-y-2 hover:scale-[1.02] hover:shadow-lg flex flex-col"
     >
-      <div className="flex justify-start gap-x-2 items-center mb-2">
+      <div className="flex justify-start gap-x-2 items-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path
             fill="none"
@@ -146,7 +146,7 @@ function GithubCardClient({ title, href, description, language, license, star, f
         </svg>
         <div className="font-bold">{title}</div>
       </div>
-      <div className="text-sm line-clamp-3 overflow-hidden flex-1 mb-3 max-h-[6rem]">{description}</div>
+      <p className="text-sm overflow-hidden flex-1 max-h-24">{description}</p>
       {showData ? (
         <div className="flex justify-start gap-x-4 items-center mt-auto">
           <div className="flex justify-between gap-x-2 items-center">

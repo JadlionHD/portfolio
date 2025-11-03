@@ -2,14 +2,143 @@
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
+
+
+
+/* Thin - 100 */
 @font-face {
   font-family: 'MapleMono';
-  src: url('/fonts/maple/MapleMono-Regular.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/maple/MapleMono-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/maple/MapleMono-Regular.ttf.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/maple/MapleMono-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/maple/MapleMono-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/fonts/maple/MapleMono-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('/fonts/maple/MapleMono-Thin.ttf.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-ThinItalic.ttf.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ExtraLight - 200 */
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-ExtraLight.ttf.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-ExtraLightItalic.ttf.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Light - 300 */
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-Light.ttf.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-LightItalic.ttf.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Regular - 400 */
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-Regular.ttf.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-Italic.ttf.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Medium - 500 */
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-Medium.ttf.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-MediumItalic.ttf.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* SemiBold - 600 */
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-SemiBold.ttf.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-SemiBoldItalic.ttf.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bold - 700 */
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-Bold.ttf.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-BoldItalic.ttf.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ExtraBold - 800 */
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-ExtraBold.ttf.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MapleMono';
+  src: url('/fonts/maple/MapleMono-ExtraBoldItalic.ttf.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
 }
 
 
