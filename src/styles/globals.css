@@ -144,8 +144,8 @@
 
 :root {
   --theme-transition: all 0.15s ease-in-out;
-  --accent: #2337ff;
-  --accent-dark: #000d8a;
+  --accent: #f3f3f3;
+  --accent-dark: #c2c2c2;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;

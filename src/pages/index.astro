@@ -3,12 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import dayjs from "dayjs";
 import MainPage from "@/layouts/MainPage.astro";
-
-const birthday = dayjs("2005-02-13");
-const now = dayjs();
-const age = now.diff(birthday, "year");
+import CurrentAge from "@/components/utils/CurrentAge";
 ---
 
 <MainPage title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -28,8 +24,13 @@ const age = now.diff(birthday, "year");
   <p>
     Hello! I'm Hendra Gunawan, <span
       class="bg-blue-200 dark:bg-blue-600 hover:dark:bg-blue-700 p-1 rounded-lg hover:bg-blue-300 transition ease-in-out cursor-pointer"
-      >{age} years old</span
-    > and I am a Fullstacks Developer Software Engineering Vocational School graduate with a passion for technology, especially fullstack development
+    >
+      <CurrentAge /></span
+    > and I am a Fullstacks Developer Software Engineering Vocational School graduate
+    with a passion for technology, especially fullstack development
   </p>
-  <p>I like making Website & Desktop apps, especially apps related to networking such as multiplayer games</p>
+  <p>
+    I like making Website & Desktop apps, especially apps related to networking
+    such as multiplayer games
+  </p>
 </MainPage>
